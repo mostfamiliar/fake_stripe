@@ -358,6 +358,11 @@ module FakeStripe
       json_response 200, fixture('retrieve_token')
     end
 
+    # Payment Methods
+    post '/v1/payment_methods' do
+      json_response 200, fixture('payment_method')
+    end
+
     private
 
     def fixture(file_name)
