@@ -35,7 +35,7 @@ module FakeStripe
     FakeStripe.reset
     FakeStripe::StubStripeJS.boot_once
     FakeStripe::StubStripeConnect.boot_once
-    stub_request(:any, /api.stripe.com/).to_rack(FakeStripe::StubApp)
+    # stub_request(:any, /api.stripe.com/).to_rack(FakeStripe::StubApp)
   end
 end
 
