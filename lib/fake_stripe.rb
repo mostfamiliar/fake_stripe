@@ -35,9 +35,8 @@ module FakeStripe
     FakeStripe.reset
     FakeStripe::StubStripeJS.boot_once
     FakeStripe::StubStripeConnect.boot_once
+    STRIPE_JS_HOST = "http://localhost:#{FakeStripe::StubStripeJS.server_port}"
+    STRIPE_CONNECT_HOST = "http://localhost:#{FakeStripe::StubStripeConnect.server_port}"
     stub_request(:any, /api.stripe.com/).to_rack(FakeStripe::StubApp)
   end
 end
-
-STRIPE_JS_HOST = "http://localhost:#{FakeStripe::StubStripeJS.server_port}"
-STRIPE_CONNECT_HOST = "http://localhost:#{FakeStripe::StubStripeConnect.server_port}"
